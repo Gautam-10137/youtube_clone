@@ -1,7 +1,20 @@
 import {useState,useEffect,}  from 'react'
 import {Box,Stack,Typography} from '@mui/material'
-import SideBar from './SideBar'
+import {SideBar,Videos} from './'
+import {fetchFromAPI} from '../utils/fetchFromAPI'
 const Feed = () => {
+  const [selectedCategory,setSelectedCategory]=useState('New');
+  const [videos,setVideos]=useState(null);
+  useEffect(()=>{
+    setVideos(null);
+       fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data)=> setVideos(data.items));
+       
+        //To get data  we add then to perfom some task when async function fetchFromAPI return its promise (.then is procedure for 
+        // async function .But for sync function we use 'const data=fetchFromAPI()'
+        
+       
+  },[selectedCategory]);
+
   return (
      <Stack
         sx={{
@@ -22,7 +35,10 @@ const Feed = () => {
         
       }}
       >
-        <SideBar/>
+        <SideBar
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        />
         <Typography
          className='copyright'
          variant='body2'
@@ -33,8 +49,20 @@ const Feed = () => {
           @Copyright 2023 JSM MEDIA
           </Typography>     
       </Box>
-      <Box>
-        {/* <Typo */}
+      <Box
+      p={2} sw={{overflowY:'auto',
+      height:'90vh',flex:2
+    }}
+      >
+        <Typography
+        variant="h4" fontWeight="bold" mb={2} sx={{
+          color:'white'
+        }}
+        >{selectedCategory}
+          <span style={{color:'#F31503'}}> videos</span>
+        </Typography>
+        
+        <Videos videos={videos}/>
       </Box>
      </Stack>    
   )
