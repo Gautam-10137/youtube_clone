@@ -8,7 +8,7 @@ const App = () => {
     <Box sx={{backgroundColor:'#000'}}>
       <Navbar> </Navbar>
       <Routes>
-        <Route path="/" exact elemet={<Feed/>}></Route>
+        <Route path="/"  element={<Feed/>}></Route>
         <Route path="/video/:id" element={<VideoDetail/>}></Route>
         <Route path="/channel/:id" element={<ChannelDetail/>}></Route>
         <Route path="/search/:searchTerm" element={<SearchFeed/>}></Route>
