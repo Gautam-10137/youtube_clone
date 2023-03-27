@@ -6,7 +6,7 @@ const Feed = () => {
   const [selectedCategory,setSelectedCategory]=useState('New');
   const [videos,setVideos]=useState(null);
   useEffect(()=>{
-    setVideos(null);
+    // setVideos(null);
        fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data)=> setVideos(data.items));
        
         //To get data  we add then to perfom some task when async function fetchFromAPI return its promise (.then is procedure for 
