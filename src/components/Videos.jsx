@@ -1,7 +1,8 @@
 import {Stack,Box} from '@mui/material'
 import {VideoCard,ChannelCard} from './'
 const Videos = ({videos}) => {
-  console.log(videos);
+   console.log(videos);
+   if(!videos?.length) return <div></div>;
     return (
    <Stack
    direction="row" flexWrap='wrap' justifyContent='start' 
