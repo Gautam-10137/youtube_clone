@@ -35,7 +35,7 @@ const VideoDetail = () => {
        >
         <Box flex={1}>
           <Box sx={{width:'100%',position:'sticky',top:'86px'}}>
-            <ReactPlayer url={`https://www.youtube.com/embed/watch?v=${id}?modestbranding=1&playsinline=0&showinfo=0&enablejsapi=1&origin=https%3A%2F%2Fintercoin.org&widgetid=1`} className='react-player' controls origin='http://localhost:3000' />
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}?modestbranding=1&playsinline=0&showinfo=0&enablejsapi=1&origin=https%3A%2F%2Fintercoin.org&widgetid=1`} className='react-player' controls origin='http://localhost:3000' />
              <Typography color='#fff' variant='h5' fontWeight='bold' p={2}>
               {title}
               </Typography>

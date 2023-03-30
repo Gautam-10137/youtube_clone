@@ -1,7 +1,7 @@
 import {Stack,Box} from '@mui/material'
 import {VideoCard,ChannelCard, Loader} from './'
 const Videos = ({videos,direction}) => {
-  //  console.log(videos);
+   console.log(videos);
    if(!videos?.length) return <Loader/>;
     return (
    <Stack
@@ -22,4 +22,4 @@ const Videos = ({videos,direction}) => {
   )
 }
 
-export default Videos
+export default Videos;
